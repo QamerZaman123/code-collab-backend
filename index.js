@@ -127,7 +127,7 @@ const RAPID_API_KEY = process.env.RAPID_API_KEY;
 // ✅ CORS config
 const allowedOrigins = [
   "http://localhost:3000", // dev frontend
-  FRONTEND_URL // production frontend (from Render env)
+  process.env.FRONTEND_URL // production frontend (from Render env)
 ];
 
 app.use(cors({
