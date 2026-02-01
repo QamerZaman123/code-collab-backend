@@ -126,13 +126,19 @@ const RAPID_API_KEY = process.env.RAPID_API_KEY;
 
 // ✅ CORS config
 const allowedOrigins = [
-  "http://localhost:3000", // dev frontend
-  process.env.FRONTEND_URL // production frontend (from Render env)
+  "http://localhost:3000", 
+  process.env.FRONTEND_URL?.replace(/\/$/, ""),
+  "https://myfrontend.vercel.app" 
 ];
+
+// const allowedOrigins = [
+//   "http://localhost:3000", // dev frontend
+//   process.env.FRONTEND_URL // production frontend (from Render env)
+// ];
 
 app.use(cors({
   origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
+    if (!origin || allowedOrigins.includes(origin.replace(/\/$/, ""))) {
       callback(null, true);
     } else {
       callback(new Error("Not allowed by CORS"));
