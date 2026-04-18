@@ -4,7 +4,7 @@ A scalable **Node.js + Express backend** powering a **real-time code collaborati
 
 ---
 
-## 🚀 Live API
+## 🚀 Live Demo
 
 - Demo: (https://code-collab-frontend-blond.vercel.app/)
 
